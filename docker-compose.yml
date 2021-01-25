@@ -3,10 +3,6 @@ version: "3.3"
 services:
   java11jdk:
     build: .
-    image: springjava
-    #image: openjdk:11-jdk    
+    image: springjava   
     ports:
-      - "8080:8080" 
-    #volumes:
-    #  - ./target/*.jar :app.jar
-    #entrypoint: ["java","-jar","/app.jar"]
+      - "8080:8080"
