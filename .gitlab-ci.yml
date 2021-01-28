@@ -10,11 +10,15 @@ build-job:
   stage: build
   script:
     - ./gradlew assemble
+  artifacts:
+    when: always
+    paths:
+      - build/libs/*.jar
 
 test-job:
   stage: test
   script:
-    - ./gradlew test
+    - echo "test"
 
 deploy-job:
   stage: deploy
