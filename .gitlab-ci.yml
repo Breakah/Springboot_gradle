@@ -1,0 +1,26 @@
+stages:
+  - build
+  - test
+  - deploy
+_
+before:
+  - image: openjdk:15-jdk
+  - export GRADLE_USER_HOME=`pwd`/.gradle 
+
+build-job:
+  stage: build
+  script:
+    - ./gradlew assemble
+
+test-job:
+  stage: test
+  script:
+    - ./gradlew test
+
+deploy-job:
+  stage: deploy
+  script:
+    - ./deploy
+ 
+
+
