@@ -1,6 +1,6 @@
 stages:
-  - build
   - test
+  - build
   - deploy
 
 default: 
@@ -18,7 +18,11 @@ build-job:
 test-job:
   stage: test
   script:
-    - echo "test"
+    - ./gradlew test
+  artifacts:
+    when: always
+    paths:
+      - build/test-results/test/TEST-*.xml
 
 deploy-job:
   stage: deploy
