@@ -15,7 +15,7 @@ build-job:
 test-job:
   stage: test
   script:
-    - ./gradlew test
+    - echo "test......"
 
 deploy-job:
   stage: deploy
